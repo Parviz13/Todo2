@@ -78,10 +78,15 @@ const reload = (arr, place) => {
         mainDiv.append(topSide, time)
         place.append(mainDiv) // functions
 
+
+        h4.onclick = () => {
+           h4.classList.add("active")
+           item.isDone = true
+           item.time = new Date().getHours() + ':' + new Date().getMinutes()
+    }
+             
         del.onclick = () => {
             todos = todos.filter(el => el.id !== item.id)
-            item.isDone = true
-            item.time = new Date().getHours() + ':' + new Date().getMinutes()
             reload(todos, container)
         }
         edit.onclick = () => {
